@@ -5,9 +5,15 @@
 </ion-header>
 
 <ion-content padding>
-  <h2>Welcome to Ionic!</h2>
+  <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+    <ion-list>
+      <ion-item *ngFor="let item of items">
+        {{ item }}
+      </ion-item>
+    </ion-list>
+  <h2>Welcome to My App!</h2>
   <p>
-    test This starter project comes with simple tabs-based layout for apps
+    This starter project comes with simple tabs-based layout for apps
     that are going to primarily use a Tabbed UI.
   </p>
   <p>
@@ -26,5 +32,5 @@
     </ion-item>
 
   </ion-list>
-  <button ion-button full>Log in</button>
+  <button ion-button full (click)="showAlert()">Log in</button>
 </ion-content>
